@@ -1,0 +1,132 @@
+@font-face {
+    font-family: "MS Sans";
+    src: url("/fonts/ms-sans.woff2") format("woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "MS Sans";
+    src: url("/fonts/ms-sans-bold.woff2") format("woff2");
+    font-weight: 700;
+}
+
+* {
+    font-family: "MS Sans";
+    font-size: 9px;
+}
+
+html,
+body {
+    background-color: var(--black);
+    width: 640px;
+    height: 480px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    transform-origin: top left;
+}
+
+img,
+canvas {
+    image-rendering: crisp-edges;
+}
+
+canvas {
+    position: absolute;
+    z-index: -9999;
+    top: 0;
+    left: 0;
+    width: 640px;
+    height: 480px;
+}
+
+#taskbar {
+    position: absolute;
+    display: flex;
+    top: 452px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 28px;
+    width: 640px;
+    background-color: var(--gray);
+    border-top: var(--white);
+    box-shadow:
+        inset 0 1px var(--gray),
+        inset 0 2px var(--white);
+}
+
+.out {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--gray);
+    box-shadow:
+        inset -1px 0 0 var(--black),
+        inset 0 -1px 0 var(--black),
+        inset -1px -1px 0 var(--black),
+        inset 1px 0 0 0 var(--white),
+        inset 0 1px 0 0 var(--white),
+        inset -2px 0 0 0 var(--dark-gray),
+        inset 0 -2px 0 0 var(--dark-gray);
+    height: 22px;
+    width: fit-content;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 4px;
+}
+
+.in-checker {
+    display: inline-flex;
+    align-items: center;
+    background-size: 2px 2px;
+    background-position: 0 0;
+    box-shadow:
+        inset -1px 0 0 var(--white),
+        inset 0 -1px 0 var(--white),
+        inset 1px 0 0 0 var(--black),
+        inset 0 1px 0 0 var(--black),
+        inset -2px 0 0 var(--gray),
+        inset 0 -2px 0 var(--gray),
+        inset 2px 0 0 0 var(--dark-gray),
+        inset 0 2px 0 0 var(--dark-gray),
+        inset 0 3px 0 0 var(--white);
+    height: 22px;
+    width: fit-content;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 4px;
+}
+
+.in {
+    display: inline-flex;
+    align-items: center;
+    background: var(--gray);
+    box-shadow:
+        inset 1px 0 0 var(--dark-gray),
+        inset 0 1px 0 var(--dark-gray),
+        inset -1px 0 0 var(--white),
+        inset 0 -1px 0 var(--white);
+    height: 22px;
+    width: fit-content;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 4px;
+}
+
+.right {
+    margin-left: auto;
+}
+
+.mr {
+    margin-right: 12px;
+}
+
+.ml {
+    margin-left: 12px;
+}
