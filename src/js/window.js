@@ -2,9 +2,9 @@ function createWindow(title, icon, isResizable) {
   let root = document.createElement("div");
   root.classList.add("window", "out");
   root.id = title
-      .toLowerCase()
-      .replace(/[^a-z0-9\-_:.]/g, "_")
-      .replace(/^[^a-z]+/, "");
+    .toLowerCase()
+    .replace(/[^a-z0-9\-_:.]/g, "_")
+    .replace(/^[^a-z]+/, "");
 
   let header = document.createElement("header");
   header.classList.add("window-header");
@@ -20,13 +20,13 @@ function createWindow(title, icon, isResizable) {
   header.appendChild(titleP);
 
   let minimizeBtn = document.createElement("img");
-  minimizeBtn.src = "minimize.png";
+  minimizeBtn.src = "/image/minimize.png";
   minimizeBtn.classList.add("out-button");
   header.appendChild(minimizeBtn);
 
   if (isResizable) {
     let maximizeBtn = document.createElement("img");
-    maximizeBtn.src = "maximize.png";
+    maximizeBtn.src = "/image/maximize.png";
     maximizeBtn.classList.add("out-button");
     maximizeBtn.style.marginRight = "2px";
 
@@ -48,18 +48,18 @@ function createWindow(title, icon, isResizable) {
         root.style.left = "0";
         root.style.top = "0";
       }
-    }
+    };
 
     header.appendChild(maximizeBtn);
   }
 
   let closeBtn = document.createElement("img");
-  closeBtn.src = "close.png";
+  closeBtn.src = "/image/close.png";
   closeBtn.classList.add("out-button");
 
   closeBtn.onclick = () => {
     root.remove();
-  }
+  };
 
   header.appendChild(closeBtn);
 
@@ -67,11 +67,14 @@ function createWindow(title, icon, isResizable) {
 
   document.body.appendChild(root);
 
-  dragElement(root)
+  dragElement(root);
 }
 
 function dragElement(el) {
-  let startX = 0, startY = 0, initialLeft = 0, initialTop = 0;
+  let startX = 0,
+    startY = 0,
+    initialLeft = 0,
+    initialTop = 0;
 
   const header = document.getElementById(el.id + "-header");
   const dragTarget = header || el;
@@ -99,7 +102,6 @@ function dragElement(el) {
   };
 }
 
-
 window.onload = () => {
-  createWindow("My Computer", "icon.png", true);
+  createWindow("My Computer", "/image/icon.png", true);
 };
