@@ -56,6 +56,19 @@ canvas {
         inset 0 2px var(--white);
 }
 
+.out-button {
+    display: inline-block;
+    background-color: var(--gray);
+    box-shadow:
+        inset -1px 0 0 var(--black),
+        inset 0 -1px 0 var(--black),
+        inset -1px -1px 0 var(--black),
+        inset 1px 0 0 0 var(--white),
+        inset 0 1px 0 0 var(--white),
+        inset -2px 0 0 0 var(--dark-gray),
+        inset 0 -2px 0 0 var(--dark-gray);
+}
+
 .out {
     display: inline-flex;
     align-items: center;
