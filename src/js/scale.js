@@ -1,3 +1,14 @@
+// this is something you can do?
+
+Object.defineProperty(window, "globalScale", {
+  get: () => activeScale,
+  set: (val) => {
+    activeScale = val;
+  },
+});
+
+let activeScale = 1;
+
 // this is far from ideal, but i ain't doin allat.
 
 function scaleContent() {
@@ -7,6 +18,8 @@ function scaleContent() {
   const scaleX = window.innerWidth / baseWidth;
   const scaleY = window.innerHeight / baseHeight;
   const scale = Math.min(scaleX, scaleY);
+
+  activeScale = scale;
 
   const content = document.querySelector("body");
   content.style.transform = `scale(${scale})`;
@@ -18,5 +31,6 @@ function scaleContent() {
   content.style.left = `${marginLeft}px`;
   content.style.top = `0px`;
 }
+
 window.addEventListener("resize", scaleContent);
 window.addEventListener("load", scaleContent);

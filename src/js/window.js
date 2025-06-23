@@ -43,10 +43,10 @@ function createWindow(title, icon, isResizable) {
         root.setAttribute("data-left", root.style.left);
         root.setAttribute("data-top", root.style.top);
         root.setAttribute("data-max", "true");
-        root.style.width = "640px";
+        root.style.width = "632px";
         root.style.height = "452px";
-        root.style.left = "0";
-        root.style.top = "0";
+        root.style.left = "-2px";
+        root.style.top = "-4px";
       }
     };
 
@@ -81,15 +81,15 @@ function dragElement(el) {
 
   dragTarget.onmousedown = (e) => {
     e.preventDefault();
-    startX = e.clientX;
-    startY = e.clientY;
+    startX = e.clientX / globalScale;
+    startY = e.clientY / globalScale;
 
     initialLeft = parseFloat(getComputedStyle(el).left) || 0;
     initialTop = parseFloat(getComputedStyle(el).top) || 0;
 
     document.onmousemove = (e) => {
-      const dx = e.clientX - startX;
-      const dy = e.clientY - startY;
+      const dx = e.clientX / globalScale - startX;
+      const dy = e.clientY / globalScale - startY;
 
       el.style.left = initialLeft + dx + "px";
       el.style.top = initialTop + dy + "px";
