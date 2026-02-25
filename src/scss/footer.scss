@@ -1,0 +1,21 @@
+@use "shapes";
+
+footer {
+    @extend %outward;
+    z-index: 255;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 24px;
+}
+
+.window-tab {
+    @extend %outward;
+    height: calc(100% - 8px);
+    width: fit-content;
+    padding: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}

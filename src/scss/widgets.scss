@@ -23,6 +23,7 @@
   border: none;
   outline: none;
   user-select: none;
+  image-rendering: pixelated;
 }
 
 b, strong {
@@ -42,8 +43,7 @@ input[type=checkbox] {
 }
 
 input[type=checkbox]:checked {
-  background: url("/static/img/check.png");
-  image-rendering: pixelated;
+  background: url("/static/img/widgets/check.png");
 }
 
 input[type=color] {
@@ -59,7 +59,7 @@ input[type=radio] {
 }
 
 input[type=radio]:checked {
-  background: url("/static/img/dot.png");
+  background: url("/static/img/widgets/dot.png");
   image-rendering: pixelated;
 }
 
@@ -104,4 +104,5 @@ button:active, input[type=button]:active, input[type=reset]:active, input[type=s
 
 textarea {
   @extend %inward;
+  background: white;
 }

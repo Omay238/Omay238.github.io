@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "rootDir": "src/ts",
+    "outDir": "static/js",
+    "target": "ES2020",
+    "module": "ESNext",
+    "strict": true,
+  },
+  "include": ["src"],
+}
