@@ -2,13 +2,15 @@ function createWindow(
   icon: string,
   title: string,
   id: string,
+  width: number,
+  height: number,
   htmlContent: string,
   is_resizable: boolean,
 ) {
   let tabEl = document.createElement("div");
   let tabImg = document.createElement("img");
   let tabTitle = document.createElement("p");
-  tabEl.className = "window-tab";
+  tabEl.classList.add("window-tab", "in");
   tabEl.id = id + "-tab";
   tabImg.src = icon;
   tabTitle.innerText = title;
@@ -16,6 +18,12 @@ function createWindow(
   document.getElementsByTagName("footer")[0].appendChild(tabEl);
 
   let windowEl = document.createElement("div");
+  windowEl.setAttribute("data-width", width + "px");
+  windowEl.setAttribute("data-height", height + "px");
+  windowEl.style.width = width + "px";
+  windowEl.style.height = height + "px";
+  windowEl.style.left = 320 - width * 0.5 + "px";
+  windowEl.style.top = 240 - height * 0.5 + "px";
   windowEl.classList.add("window");
   windowEl.id = id;
 
@@ -31,6 +39,8 @@ function createWindow(
   let minimizeButton = document.createElement("button");
 
   minimizeButton.addEventListener("click", () => {
+    tabEl.classList.remove("in");
+    windowEl.setAttribute("data-minimized", "yes");
     windowEl.setAttribute("data-x", windowEl.style.left);
     windowEl.setAttribute("data-y", windowEl.style.top);
     windowEl.style.left = "-10000px";
@@ -67,6 +77,23 @@ function createWindow(
   closeButton.addEventListener("click", () => {
     windowEl.remove();
     tabEl.remove();
+  });
+
+  tabEl.addEventListener("click", () => {
+    if (windowEl.getAttribute("data-minimized") == "yes") {
+      tabEl.classList.add("in");
+      windowEl.setAttribute("data-minimized", "no");
+      // @ts-ignore
+      windowEl.style.left = windowEl.getAttribute("data-x");
+      // @ts-ignore
+      windowEl.style.top = windowEl.getAttribute("data-y");
+    } else {
+      tabEl.classList.remove("in");
+      windowEl.setAttribute("data-minimized", "yes");
+      windowEl.setAttribute("data-x", windowEl.style.left);
+      windowEl.setAttribute("data-y", windowEl.style.top);
+      windowEl.style.left = "-10000px";
+    }
   });
 
   let windowContent = document.createElement("div");
@@ -121,6 +148,8 @@ window.addEventListener("load", () => {
     "/static/img/icon.png",
     "Welcome",
     "welcome",
+    200,
+    100,
     "<h1>:3c</h1>",
     true,
   );

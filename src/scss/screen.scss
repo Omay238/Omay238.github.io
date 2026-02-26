@@ -1,20 +1,22 @@
-@use 'palette';
+// manages scaling of the window keeping 640x480 resolution no matter what.
+
+@use "palette";
 
 html {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 body {
-  width: 640px;
-  height: 480px;
-  margin: 0;
-  background: palette.$palette-gray;
-  overflow: hidden;
+    width: 640px;
+    height: 480px;
+    margin: 0;
+    background: palette.$palette-gray;
+    overflow: hidden;
 }

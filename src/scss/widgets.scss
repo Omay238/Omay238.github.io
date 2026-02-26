@@ -1,108 +1,132 @@
-@use 'palette';
-@use 'shapes';
+// widget css for most elements.
+
+@use "palette";
+@use "shapes";
 
 @font-face {
-  font-family: "MS Sans";
-  src: url("/static/font/ms-sans.woff2");
+    font-family: "MS Sans";
+    src: url("/static/font/ms-sans.woff2");
 }
 
 @font-face {
-  font-family: "MS Sans Bold";
-  src: url("/static/font/ms-sans-bold.woff2");
+    font-family: "MS Sans Bold";
+    src: url("/static/font/ms-sans-bold.woff2");
 }
 
 @font-face {
-  font-family: "Bullet";
-  src: url("/static/font/bullet.woff2");
+    font-family: "Bullet";
+    src: url("/static/font/bullet.woff2");
 }
 
 * {
-  font-family: "MS Sans", monospace;
-  font-size: 14px;
-  line-height: 14px;
-  border: none;
-  outline: none;
-  user-select: none;
-  image-rendering: pixelated;
+    font-family: "MS Sans", monospace;
+    font-size: 14px;
+    line-height: 14px;
+    border: none;
+    outline: none;
+    user-select: none;
+    image-rendering: pixelated;
 }
 
-b, strong {
-  font-family: "MS Sans Bold", monospace;
-  letter-spacing: -1px;
+b,
+strong {
+    font-family: "MS Sans Bold", monospace;
+    letter-spacing: -1px;
 }
 
 input {
-  @extend %inward;
+    @extend %inward;
 }
 
-input[type=checkbox] {
-  appearance: none;
-  width: 14px;
-  height: 14px;
-  cursor: pointer;
+input[type="checkbox"] {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
 }
 
-input[type=checkbox]:checked {
-  background: url("/static/img/widgets/check.png");
+input[type="checkbox"]:checked {
+    background: url("/static/img/widgets/check.png");
 }
 
-input[type=color] {
-  height: 18px;
-  width: 24px;
+input[type="color"] {
+    height: 18px;
+    width: 24px;
 }
 
-input[type=radio] {
-  appearance: none;
-  width: 14px;
-  height: 14px;
-  cursor: pointer;
+input[type="radio"] {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
 }
 
-input[type=radio]:checked {
-  background: url("/static/img/widgets/dot.png");
-  image-rendering: pixelated;
+input[type="radio"]:checked {
+    background: url("/static/img/widgets/dot.png");
+    image-rendering: pixelated;
 }
 
-input[type=range] {
-  -webkit-appearance: none;
-  appearance: none;
-  height: 0;
-  background: palette.$palette-dark_gray;
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 0;
+    background: palette.$palette-dark_gray;
 }
 
-input[type=range]::-webkit-slider-thumb, input[type=range]::-moz-range-thumb {
-  appearance: none;
-  -webkit-appearance: none;
-  @extend %outward;
-  border-radius: 0;
-  width: 2px;
-  height: 8px;
-  cursor: pointer;
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    @extend %outward;
+    border-radius: 0;
+    width: 2px;
+    height: 8px;
+    cursor: pointer;
 }
 
-input[type=password] {
-  font-family: "Bullet", monospace;
-  font-size: 8px;
+input[type="password"] {
+    font-family: "Bullet", monospace;
+    font-size: 8px;
 }
 
-input[type=file]::file-selector-button {
-  font-family: "MS Sans", monospace;
-  font-size: 14px;
-  line-height: 14px;
-  border: none;
-  outline: none;
+input[type="file"]::file-selector-button {
+    font-family: "MS Sans", monospace;
+    font-size: 14px;
+    line-height: 14px;
+    border: none;
+    outline: none;
 }
 
-button, input[type=button], input[type=reset], input[type=submit], input[type=file]::file-selector-button {
-  @extend %outward;
-  cursor: pointer;
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="file"]::file-selector-button {
+    @extend %outward;
+    cursor: pointer;
 }
 
-button:active, input[type=button]:active, input[type=reset]:active, input[type=submit]:active, input[type=file]::file-selector-button:active {
-  @extend %inward;
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active,
+input[type="file"]::file-selector-button:active {
+    @extend %inward;
 }
 
 textarea {
-  @extend %inward;
-  background: white;
+    @extend %inward;
+    background: white;
+}
+
+.out {
+    @extend %outward;
+}
+
+.in {
+    @extend %inward;
+}
+
+.in-checker {
+    @extend %inward-checker;
 }

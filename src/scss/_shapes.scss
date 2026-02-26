@@ -1,50 +1,53 @@
+// shapes and borders for common usage.
+
 @use "palette";
 
 @use "sass:string";
 
 %inward-border {
-  box-shadow:
-          inset palette.$palette-white     -1px  0,
-          inset palette.$palette-white      0   -1px,
-          inset palette.$palette-black      1px  0,
-          inset palette.$palette-black      0    1px,
-          inset palette.$palette-gray      -2px 0,
-          inset palette.$palette-gray       0  -2px,
-          inset palette.$palette-dark_gray  2px 0,
-          inset palette.$palette-dark_gray  0   2px;
-  padding: 3px;
+    box-shadow:
+        inset palette.$palette-white -1px 0,
+        inset palette.$palette-white 0 -1px,
+        inset palette.$palette-black 1px 0,
+        inset palette.$palette-black 0 1px,
+        inset palette.$palette-gray -2px 0,
+        inset palette.$palette-gray 0 -2px,
+        inset palette.$palette-dark_gray 2px 0,
+        inset palette.$palette-dark_gray 0 2px;
+    padding: 3px;
 }
 
 %inward {
-  @extend %inward-border;
-  background: palette.$palette-gray;
+    @extend %inward-border;
+    background: palette.$palette-gray;
 }
 
 %inward-checker {
-  @extend %inward-border;
-  @function encode-color($color) {
-    @return string.unquote('%23#{string.slice(#{$color}, 2)}');
-  }
-  $gray: encode-color(palette.$palette-gray);
-  $white: encode-color(palette.$palette-white);
-  $svg: "<svg width='2' height='2' viewBox='0 0 2 2' xmlns='http://www.w3.org/2000/svg'><rect x='0' y='0' width='1' height='1' fill='#{$gray}'/><rect x='1' y='0' width='1' height='1' fill='#{$white}'/><rect x='0' y='1' width='1' height='1' fill='#{$white}'/><rect x='1' y='1' width='1' height='1' fill='#{$gray}'/></svg>";
-  background: url("data:image/svg+xml;charset=UTF-8,#{$svg}");
+    @extend %inward-border;
+    @function encode-color($color) {
+        @return string.unquote("%23#{string.slice(#{$color}, 2)}");
+    }
+    $gray: encode-color(palette.$palette-gray);
+    $white: encode-color(palette.$palette-white);
+    // aiaiai what an annoying little thing.
+    $svg: "<svg width='2' height='2' viewBox='0 0 2 2' xmlns='http://www.w3.org/2000/svg'><rect x='0' y='0' width='1' height='1' fill='#{$gray}'/><rect x='1' y='0' width='1' height='1' fill='#{$white}'/><rect x='0' y='1' width='1' height='1' fill='#{$white}'/><rect x='1' y='1' width='1' height='1' fill='#{$gray}'/></svg>";
+    background: url("data:image/svg+xml;charset=UTF-8,#{$svg}");
 }
 
 %outward-border {
-  box-shadow:
-          inset palette.$palette-black     -1px 0,
-          inset palette.$palette-black      0  -1px,
-          inset palette.$palette-gray       1px 0,
-          inset palette.$palette-gray       0   1px,
-          inset palette.$palette-dark_gray -2px 0,
-          inset palette.$palette-dark_gray  0  -2px,
-          inset palette.$palette-white      2px 0,
-          inset palette.$palette-white      0   2px;
-  padding: 3px;
+    box-shadow:
+        inset palette.$palette-black -1px 0,
+        inset palette.$palette-black 0 -1px,
+        inset palette.$palette-gray 1px 0,
+        inset palette.$palette-gray 0 1px,
+        inset palette.$palette-dark_gray -2px 0,
+        inset palette.$palette-dark_gray 0 -2px,
+        inset palette.$palette-white 2px 0,
+        inset palette.$palette-white 0 2px;
+    padding: 3px;
 }
 
 %outward {
-  @extend %outward-border;
-  background: palette.$palette-gray;
+    @extend %outward-border;
+    background: palette.$palette-gray;
 }
