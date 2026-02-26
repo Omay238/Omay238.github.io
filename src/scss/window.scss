@@ -23,6 +23,13 @@
 .window-header > button {
     width: 16px;
     height: 14px;
+    // stupid change that makes it so it works on chromium + safari
+    @extend %outward;
+}
+
+// stupid change that makes it so it works on chromium + safari
+.window-header > button:active {
+    @extend %inward;
 }
 
 .window-header > button:nth-of-type(1) {
