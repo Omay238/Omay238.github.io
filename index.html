@@ -7,18 +7,42 @@
 
         <link rel="stylesheet" href="/static/css/screen.css" />
         <link rel="stylesheet" href="/static/css/window.css" />
+        <link rel="stylesheet" href="/static/css/start.css" />
         <link rel="stylesheet" href="/static/css/footer.css" />
 
         <link rel="stylesheet" href="/static/css/widgets.css" />
 
         <script src="/static/js/screen.js"></script>
         <script src="/static/js/window.js"></script>
+        <script src="/static/js/start.js"></script>
     </head>
     <body>
         <footer class="out">
-            <div class="window-tab">
+            <div class="window-tab" id="start-button">
                 <img src="/static/img/icon.png" />
                 <p>Home</p>
+                <div id="start-menu">
+                    <div
+                        class="start-tab"
+                        data-src="<iframe src='/static/apps/about.html'></iframe>"
+                    >
+                        <img src="/static/img/icon.png" />
+                        <p>About</p>
+                    </div>
+                    <div
+                        class="start-tab"
+                        data-src="<iframe src='/static/apps/contact.html'></iframe>"
+                        data-width="200"
+                        data-height="400"
+                    >
+                        <img src="/static/img/icon.png" />
+                        <p>Contact</p>
+                    </div>
+                    <div class="start-tab" id="shutdown">
+                        <img src="/static/img/icon.png" />
+                        <p>Shutdown</p>
+                    </div>
+                </div>
             </div>
         </footer>
     </body>

@@ -1,0 +1,28 @@
+@use "shapes";
+
+#start-button {
+    width: 128px;
+}
+
+#start-menu {
+    @extend %outward;
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+}
+
+.start-tab {
+    @extend %outward;
+    width: 128px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.start-tab > * {
+    display: inline-flex;
+}

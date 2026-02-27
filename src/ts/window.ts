@@ -142,15 +142,3 @@ function createWindow(
 
   document.body.append(windowEl);
 }
-
-window.addEventListener("load", () => {
-  createWindow(
-    "/static/img/icon.png",
-    "Welcome",
-    "welcome",
-    200,
-    100,
-    "<h1>:3c</h1>",
-    true,
-  );
-});
