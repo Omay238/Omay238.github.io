@@ -1,4 +1,16 @@
 window.addEventListener("load", () => {
+  // @ts-ignore
+  document.getElementById("start-button").addEventListener("click", () => {
+    // @ts-ignore
+    if (document.getElementById("start-menu").style.display == "none") {
+      // @ts-ignore
+      document.getElementById("start-menu").style.display = "block";
+    } else {
+      // @ts-ignore
+      document.getElementById("start-menu").style.display = "none";
+    }
+  });
+
   for (let el of document.getElementsByClassName("start-tab")) {
     if (el.id == "shutdown") {
       el.addEventListener("click", () => {
@@ -7,7 +19,7 @@ window.addEventListener("load", () => {
     } else {
       el.addEventListener("click", () => {
         createWindow(
-          "/static/img/icon.png",
+          "/img/icon.png",
           // @ts-ignore
           el.lastElementChild.textContent,
           // @ts-ignore

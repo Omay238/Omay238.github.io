@@ -29,11 +29,11 @@ jobs:
       - name: Install Bun
         uses: oven-sh/setup-bun@v2
       - name: Build SCSS and Typescript
-        run: bun x sass src/scss:static/css & bun x tsc
+        run: bun run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: "./dist"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

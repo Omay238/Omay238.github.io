@@ -11,6 +11,13 @@
     bottom: 30px;
 }
 
+.start-category-menu {
+    @extend %outward;
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+}
+
 .start-tab {
     @extend %outward;
     width: 128px;
